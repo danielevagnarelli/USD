@@ -1,0 +1,50 @@
+#usda 1.0
+
+def "Sanatorium"
+{
+    def Scope "Materials"
+    {
+        def Material "Linoleum_Floor"
+        {
+            token outputs:surface.connect = </Sanatorium/Materials/Linoleum_Floor/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.2, 0.2, 0.2)
+                float inputs:metallic = 0
+                float inputs:roughness = 0.6
+                token outputs:surface
+            }
+        }
+
+        def Material "Pill_Plastic"
+        {
+            token outputs:surface.connect = </Sanatorium/Materials/Pill_Plastic/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.8, 0.8, 0.8)
+                float inputs:metallic = 0
+                float inputs:roughness = 0.05
+                token outputs:surface
+            }
+        }
+
+        def Material "Surgical_Steel"
+        {
+            token outputs:surface.connect = </Sanatorium/Materials/Surgical_Steel/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.2, 0.2, 0.2)
+                float inputs:metallic = 1
+                float inputs:roughness = 0.5
+                token outputs:surface
+            }
+        }
+    }
+}
+

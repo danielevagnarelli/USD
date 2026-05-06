@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    defaultPrim = "PatientBed"
+)
+
+def Xform "PatientBed" (
+    kind = "component"
+    variants = {
+        string state = "clean"
+    }
+    prepend variantSets = "state"
+)
+{
+    variantSet "state" = {
+        "abandoned" {
+            def Sphere "Mattress"
+            {
+                double radius = 0.5
+                float3 xformOp:scale = (2.2, 0.1, 1.1)
+                uniform token[] xformOpOrder = ["xformOp:scale"]
+            }
+
+        }
+        "clean" {
+            def Cube "Mattress"
+            {
+                double size = 1
+                float3 xformOp:scale = (2, 0.2, 1)
+                uniform token[] xformOpOrder = ["xformOp:scale"]
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,107 @@
+#usda 1.0
+(
+    "Blackwood Sanatorium: Initial Layer Setup"
+    endTimeCode = 100
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    startTimeCode = 1
+    subLayers = [
+        @./layers/environment.usda@,
+        @./layers/props.usda@,
+        @./layers/lighting.usda@,
+        @./layers/materials.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "Sanatorium" (
+    kind = "assembly"
+)
+{
+    over "Geom"
+    {
+        over "Floor" (
+            prepend references = @./layers/environment.usda@</FloorPlaceholder>
+        )
+        {
+            rel material:binding = </Sanatorium/Materials/Linoleum_Floor>
+        }
+
+        over "Walls"
+        {
+            rel material:binding = </Sanatorium/Materials/Linoleum_Floor>
+
+            over "VerticalBar_0"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "VerticalBar_1"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "VerticalBar_2"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "VerticalBar_3"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "VerticalBar_4"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "VerticalBar_5"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "VerticalBar_6"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "HorizontalBar"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+
+            over "DoorHinge"
+            {
+                rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+            }
+        }
+    }
+
+    over "Props"
+    {
+        over "Prototypes"
+        {
+            over "Pill"
+            {
+                rel material:binding = </Sanatorium/Materials/Pill_Plastic>
+            }
+        }
+
+        over "Bed_01"
+        {
+            rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+        }
+
+        over "Bed_02"
+        {
+            rel material:binding = </Sanatorium/Materials/Surgical_Steel>
+        }
+    }
+
+    over "Lights"
+    {
+    }
+}
+

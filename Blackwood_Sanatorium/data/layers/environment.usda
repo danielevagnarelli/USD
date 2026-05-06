@@ -1,0 +1,267 @@
+#usda 1.0
+
+def Cube "FloorPlaceholder"
+{
+    double size = 1
+    float3 xformOp:scale = (10, 0.01, 10)
+    uniform token[] xformOpOrder = ["xformOp:scale"]
+}
+
+def "Sanatorium"
+{
+    def "Geom"
+    {
+        def Scope "Walls"
+        {
+            def Cube "BackWall"
+            {
+                float3 xformOp:scale = (5, 2.5, 0.1)
+                double3 xformOp:translate = (0, 2.5, -5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "RightWall"
+            {
+                float3 xformOp:scale = (0.1, 2.5, 5)
+                double3 xformOp:translate = (5, 2.5, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Left_Start"
+            {
+                float3 xformOp:scale = (0.1, 2.5, 1.5)
+                double3 xformOp:translate = (-5, 2.5, -3.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Left_End"
+            {
+                float3 xformOp:scale = (0.1, 2.5, 1.5)
+                double3 xformOp:translate = (-5, 2.5, 3.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Left_Bottom"
+            {
+                float3 xformOp:scale = (0.1, 0.75, 2)
+                double3 xformOp:translate = (-5, 0.75, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Left_Top"
+            {
+                float3 xformOp:scale = (0.1, 0.75, 2)
+                double3 xformOp:translate = (-5, 4.25, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cylinder "VerticalBar_0"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, -1.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "VerticalBar_1"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, -1)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "VerticalBar_2"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, -0.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "VerticalBar_3"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "VerticalBar_4"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, 0.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "VerticalBar_5"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, 1)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "VerticalBar_6"
+            {
+                double height = 2.8
+                double radius = 0.04
+                float xformOp:rotateX = 90
+                double3 xformOp:translate = (-5, 2.5, 1.5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateX"]
+            }
+
+            def Cylinder "HorizontalBar"
+            {
+                double height = 4
+                double radius = 0.045
+                double3 xformOp:translate = (-5, 2.5, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+
+            def Cube "Front_Left"
+            {
+                float3 xformOp:scale = (2, 2.5, 0.1)
+                double3 xformOp:translate = (-3, 2.5, 5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Front_Right"
+            {
+                float3 xformOp:scale = (2, 2.5, 0.1)
+                double3 xformOp:translate = (3, 2.5, 5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "Front_Header"
+            {
+                float3 xformOp:scale = (1, 0.5, 0.1)
+                double3 xformOp:translate = (0, 4.5, 5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Xform "DoorHinge"
+            {
+                float xformOp:rotateY.timeSamples = {
+                    1: 0,
+                    2: 0,
+                    3: 0,
+                    4: 0,
+                    5: 0,
+                    6: 0,
+                    7: 0,
+                    8: 0,
+                    9: 0,
+                    10: 0,
+                    11: 0,
+                    12: 0,
+                    13: 0,
+                    14: 0,
+                    15: 0,
+                    16: 0,
+                    17: 0,
+                    18: 0,
+                    19: 0,
+                    20: 0,
+                    21: 0,
+                    22: 0,
+                    23: 0,
+                    24: 0,
+                    25: 0,
+                    26: 0,
+                    27: 0,
+                    28: 0,
+                    29: 0,
+                    30: 0,
+                    31: 3,
+                    32: 6,
+                    33: 9,
+                    34: 12,
+                    35: 15,
+                    36: 18,
+                    37: 21,
+                    38: 24,
+                    39: 27,
+                    40: 30,
+                    41: 33,
+                    42: 36,
+                    43: 39,
+                    44: 42,
+                    45: 45,
+                    46: 48,
+                    47: 51,
+                    48: 54,
+                    49: 57,
+                    50: 60,
+                    51: 63,
+                    52: 66,
+                    53: 69,
+                    54: 72,
+                    55: 75,
+                    56: 78,
+                    57: 81,
+                    58: 84,
+                    59: 87,
+                    60: 90,
+                    61: 93,
+                    62: 96,
+                    63: 99,
+                    64: 102,
+                    65: 105,
+                    66: 108,
+                    67: 110,
+                    68: 110,
+                    69: 110,
+                    70: 110,
+                    71: 110,
+                    72: 110,
+                    73: 110,
+                    74: 110,
+                    75: 110,
+                    76: 110,
+                    77: 110,
+                    78: 110,
+                    79: 110,
+                    80: 110,
+                    81: 110,
+                    82: 110,
+                    83: 110,
+                    84: 110,
+                    85: 110,
+                    86: 110,
+                    87: 110,
+                    88: 110,
+                    89: 110,
+                    90: 110,
+                    91: 110,
+                    92: 110,
+                    93: 110,
+                    94: 110,
+                    95: 110,
+                    96: 110,
+                    97: 110,
+                    98: 110,
+                    99: 110,
+                    100: 110,
+                }
+                double3 xformOp:translate = (-1, 0, 5)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+                def Cube "DoorMesh"
+                {
+                    float3 xformOp:scale = (1, 2, 0.05)
+                    double3 xformOp:translate = (1, 2, 0)
+                    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+                }
+            }
+        }
+    }
+}
+

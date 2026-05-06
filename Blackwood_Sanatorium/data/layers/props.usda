@@ -1,0 +1,44 @@
+#usda 1.0
+
+def "Sanatorium"
+{
+    def "Props"
+    {
+        def Xform "Bed_01" (
+            prepend references = @../assets/patient_bed.usda@
+        )
+        {
+            double3 xformOp:translate = (-3, 0.11, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "Bed_02" (
+            prepend references = @../assets/patient_bed.usda@
+            variants = {
+                string state = "abandoned"
+            }
+        )
+        {
+            double3 xformOp:translate = (3, 0.06, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def "Prototypes"
+        {
+            def Sphere "Pill"
+            {
+                double radius = 0.03
+                float3 xformOp:scale = (2, 1, 1)
+                uniform token[] xformOpOrder = ["xformOp:scale"]
+            }
+        }
+
+        def PointInstancer "DebrisField"
+        {
+            point3f[] positions = [(-2.5136542, 0.035, -3.9585361), (2.7315297, 0.035, -3.591995), (3.5350583, 0.035, 3.6155665), (2.63969, 0.035, -0.13543203), (-0.24667616, 0.035, 2.6156485), (-4.1959596, 0.035, 0.8696891), (1.3897719, 0.035, -2.6069095), (-1.4663098, 0.035, -2.3035977), (1.366977, 0.035, 1.4749486), (3.8475854, 0.035, 4.0634236), (2.6816266, 0.035, 4.2947793), (-1.4755695, 0.035, -3.9029264), (-1.1716424, 0.035, -4.090948), (-2.4128354, 0.035, 3.7621367), (-1.440472, 0.035, -0.00618379), (-3.8857844, 0.035, -2.7640145), (2.4352245, 0.035, 2.8094463), (0.1293928, 0.035, -0.03718845), (-1.1288602, 0.035, 1.6966413), (-2.923061, 0.035, 2.3647478)]
+            int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            rel prototypes = </Sanatorium/Props/Prototypes/Pill>
+        }
+    }
+}
+
