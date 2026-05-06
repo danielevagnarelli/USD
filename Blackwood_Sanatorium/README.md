@@ -1,5 +1,9 @@
 # Blackwood Sanatorium: A USD Environmental Study
 
+<p align="center">
+  <img src="blackwood_sanatorium_gif.gif" alt="Blackwood Sanatorium Animation" width="800">
+</p>
+
 A cinematic, high-tension horror environment built entirely using the **Universal Scene Description (USD)** framework. This project demonstrates a modular "layers and opinions" workflow, procedural light animation, and variant-based asset management optimized for **NVIDIA Omniverse**.
 
 ---
